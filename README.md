@@ -34,7 +34,7 @@ List<DownLoadInfo> downLoadInfos=new ArrayList<>();
                     @Override
                     public void onPorgree(DownLoadInfo downLoadInfo, int start, int size) {
                       //下载进度
-//                        Log.e("Tag",downLoadInfo.getFileName()+"----"+start+"---"+size);
+                        //Log.e("Tag",downLoadInfo.getFileName()+"----"+start+"---"+size);
                     }
 
                     @Override
@@ -45,7 +45,7 @@ List<DownLoadInfo> downLoadInfos=new ArrayList<>();
                     @Override
                     public void onCompelet(DownLoadInfo downLoadInfo) {
                           //下载完成
-//                        Log.e("Tag",downLoadInfo.getFileName()+"----完成");
+                        //Log.e("Tag",downLoadInfo.getFileName()+"----完成");
                     }
 
                     @Override

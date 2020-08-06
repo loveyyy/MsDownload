@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 29
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+//
+//    lintOptions{
+//        checkReleaseBuilds false
+//        abortOnError false
+//    }
+
+}
+
+//task makeJar(type: Copy) {
+//    delete 'build/libs/msdownload.jar'
+//    from('build/intermediates/packaged-classes/release/')
+//    into('build/libs/')     include('classes.jar')
+//    rename ('classes.jar', 'msdownload.jar')
+//}
+//
+//makeJar.dependsOn(build)
+
+
+task bri
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //retrofit
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+publish {
+    userOrg = 'morningsun'//bintray.com用户名
+    repoName = "morningsun"   //bintray上常见的仓库的名字
+    groupId = 'com.morningsun'//groupId  一般为包名
+    artifactId = 'msdownload'//artifactId 一般为项目名称
+    publishVersion = '1.0.1'//版本号
+    desc = 'Android下载器'//描述，不重要
+    website = 'https://github.com/loveyyy/MsDownload.git'//网站,一般是GitHub的项目地址，一定要是可以访问到的地址
+}

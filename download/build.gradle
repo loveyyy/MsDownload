@@ -38,8 +38,6 @@ android {
 //makeJar.dependsOn(build)
 
 
-task bri
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 

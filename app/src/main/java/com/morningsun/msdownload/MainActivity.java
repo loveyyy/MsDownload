@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 List<DownLoadInfo> downLoadInfos=new ArrayList<>();
                 DownLoadInfo downLoadInfo=new DownLoadInfo();
+                downLoadInfo.setId(System.currentTimeMillis());
                 downLoadInfo.setUrl("https://alimov2.a.yximgs.com/upic/2018/06/28/07/BMjAxODA2MjgwNzM1NTVfNDQxMTQzMTg5XzY4NjQ2MTEwOTdfMl8z_hd3_B36b3e018145c233bb37d02b62a24cf3b.mp4");
                 downLoadInfo.setFileName("测试.mp3");
                 downLoadInfos.add(downLoadInfo);
